@@ -1,0 +1,139 @@
+/*#################### INDEX ####################*/
+
+body {
+  background-color: #979DAC;
+  font-family: 'Poppins', sans-serif;
+}
+
+.content {
+  margin: 0px;
+  -ms-transform: translate(-50%, -50%);
+  margin-top: 50px;
+}
+
+button {
+  width: 100%;
+  display: block;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  font-size: 21px;
+  color: #FFF;
+  text-align: center;
+  display: inline-block;
+  padding: 15px 40px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+  background-color: #0466C8;
+  margin: 0px;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  height: 150px;
+  width: 50px;
+  background: #023E7D;
+  left: -55px;
+  top: -40px;
+  transform: rotate(37deg);
+  transition: all .3s;
+  opacity: 0.3;
+}
+
+.btn:hover:before {
+  left: 95%;
+}
+
+/*#################### CADASTRAR ALUNOS ####################*/
+
+.registerStudents {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  width: 650px;
+  margin: auto;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.384);
+}
+
+.formInput {
+  color: #333;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  margin: 5px;
+  width: 90%;
+  display: block;
+  transition: all 0.3s;
+}
+
+.formInput:placeholder-shown+ {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+  transform: translateY(-4rem);
+}
+
+.label-form{
+  font-size: 1.4rem;
+  display: block;
+  font-family: unset;
+}
+
+.show-input{
+  display: block;
+  font-size: 21px;
+  text-align: center;
+  padding: 15px 27px;
+  border: 1px solid #fff;
+  letter-spacing: 2px;
+  margin: 20px;
+  margin-top: 0px;
+  width: 47%;
+  background-color: white;
+  margin-left: 25%;
+}
+
+table, th, td {
+  border: 1px solid;
+  
+}
+
+table {
+  justify-content: center; 
+  border: none;
+}
+
+th {
+  padding: 10px;
+  width: 120px;
+  text-align: center;
+}
+
+.th-filha {
+  font-size: 0.8em;
+}
+
+.resposta{ 
+  display: none; 
+  width: 50%; 
+  z-index: 1;
+  width: 65%;
+  margin: auto;
+  position: absolute;
+  margin-left: 16.7%;
+}

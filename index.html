@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,300&display=swap" rel="stylesheet">
+
+    <script src="cadastrarAlunos.js"></script>
+    <script src="show-inputs.js"></script>
+    <title>Trabalho 1</title>
+</head>
+
+<body>
+    <button id="salvo" style="background-color: rgb(22, 177, 22);" type="button" class="btn resposta">Salvo com sucesso! filtro resetado.</button>
+    
+    <button id="erro" style="background-color: rgb(216, 60, 60);" type="button" class="btn resposta">Preencha todos os campos.</button>
+    <button id="erro-filtro" style="background-color: rgb(22, 177, 22); display: none;" type="button" class="btn">Nenhum filtro aplicado.</button>
+
+    <div class="content">
+
+        <div>
+            <button onclick="showInputs(1)" id="cadastrar-alunos" class="btn">Cadastrar Alunos</button>
+
+            <div class="show-input" id="div-cadastrar-alunos" style="display: none;">
+                <div style="display: flex; justify-content: space-evenly;">
+                    <label class="label-form" for="nome">Nome</label>
+                    <label class="label-form" for="ra">RA</label>
+                </div>
+                <div style="display: flex;">
+                    <input id="nome" class="formInput" type="text" placeholder="Nome">
+                    <input id="ra" class="formInput" type="text" minlength="1" maxlength="14" placeholder="RA"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                </div>
+
+                <div style="display: flex; justify-content: space-evenly;">
+                    <label class="label-form" for="idade">Idade</label>
+                    <label class="label-form" style="display: block;" for="media">Média</label>
+                </div>
+                <div style="display: flex;">
+                    <input id="idade" class="formInput" minlength="1" maxlength="3" type="text" placeholder="Idade"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                    <input id="media" class="formInput" minlength="1" maxlength="3" style="margin-top: 5px;" type="text"
+                        placeholder="Média" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                </div>
+                <label class="label-form" style="display: block; margin-top: 15px;" for="sexo">Sexo</label>
+
+                <select name="sexo" id="sexo" style="font-size: 1.2rem; padding: 10px; width: 99%; margin-top: 8px;">
+                    <option value="1">Selecione</option>
+                    <option value="2">Masculino</option>
+                    <option value="3">Feminino</option>
+                </select>
+
+                <label class="label-form" style="display: block; margin-top: 15px;" for="resultado">Resultado</label>
+                <select name="resultado" id="resultado"
+                    style="font-size: 1.2rem; padding: 10px; width: 99%; margin-top: 8px;">
+                    <option value="1">Selecione</option>
+                    <option value="2">Aprovado</option>
+                    <option value="3">Reprovado</option>
+                </select>
+
+                <button onclick="aluno(1)"
+                    style="width: 100px; height: 35px; margin-top: 30px; background-color: rgb(147, 147, 208); color: white;">
+                    Pronto
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 100%; margin-top: 30px;">
+        <div style="display: flex; margin-bottom: 10px; width: 50%; margin-left: 25%;">
+            <select name="filtroSelect" id="filtroSelect" style="width: 95%; font-size: 21px;">
+                <option value="0">Selecione</option>
+                <option value="1">Relatório de alunos em ordem crescente por Nome</option>
+                <option value="2">Relatório de Alunos em ordem decrescente por RA</option>
+                <option value="3">Relatório de Alunos em ordem crescente por nome, apenas dos Aprovado</option>
+            </select>
+            <img style="width: 35px; margin-left: 15px; background-color: #268ef6; padding: 3px;"
+                src="https://cdn-icons-png.flaticon.com/512/107/107799.png" alt="icone-filtro" onclick="aluno(0)">
+        </div>
+
+        <table id="tab" style="margin-left: 25%; width: 50%;">
+            <tr style="background-color: black; color: white;">
+                <th>Nome</th>
+                <th>Ra</th>
+                <th>Idade</th>
+                <th>Media</th>
+                <th>Sexo</th>
+                <th>Resultado</th>
+            </tr>
+        </table>
+
+        <table id="conteudo-dinamico" style="margin-left: 25%; width: 50%; background-color: white;">
+
+        </table>
+    </div>
+</body>
+
+</html>
